@@ -1,0 +1,12 @@
+1) ifconfig - used to configure a networks interface
+
+2) nslookup - used to query internet service name interactively
+eg : nslookup google.com
+
+3) netstat - print network connection routing tables, internet statistics, masquerade connections
+and multicast
+
+4) trace route - it tracks the router packet taken from the IP network on their way to the
+given host
+
+5) tcpdump
