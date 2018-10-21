@@ -1,0 +1,439 @@
+Experiment No: 1 TCP Chat
+
+Aim: To write a chat program using TCP sockets
+
+Procedure:
+
+    Server side:
+        1.Initialize the socket and input stream
+        2.Construct the server with the port number 
+        3.Start Server and wait for a client
+        4.Take input from client socket
+        5.Display the contents
+        6.Read message from client till "Over" is sent
+        7.Close connection
+
+    Client side:
+        1.Initialize the socket,input and output stream
+        2.Construct the client with ip address and port
+        3.Establish a connection
+        4.Take input from terminal
+        5.Send input to the server
+        6.Keep reading input till the word "Over" is read as input
+        7.Close connection
+
+Result:
+    Thus,a simple chat program using TCP sockets has been successfully executed.
+
+Experiment No: 2 -HTTP
+
+Aim: To stimulate HTTP protocol using TCP sockets in Java programming
+
+Procedure:
+    The program deals with only GET requests.
+    The server is run on a particular port after initializations
+    There should be an image file,gif or html source file in the same directory.
+    Open the web browser and open the URL of the file using a local routing with local host.
+    Here, the Web Browser acts as a client and there is a Server running in the back drop.
+    The HTTP Header can be viewed with the help of the developer tools in the Browser.
+
+Result: Thus, the HTTP protocol has been stimulated using TCP sockets in Java Programming.
+
+Experiment No: 3 -DNS using UDP
+
+Aim: To stimulate DNS protocol using UDP sockets in Java programming
+
+Procedure:
+    Server side:
+        1.Initialize the socket and input stream
+        2.Construct the server with the port number 
+        3.Start Server and wait for a client
+        4.Take input choice from client socket
+        5.If choice is 1 execute steps 6 to 9 (DNS)
+        6.Read host name from client.
+        7.Create an InetAddress object for the recieved host name.
+        8.Get the host address by using getHostAddress() function.
+        9.Send host address to the client.
+        10.If choice is 2 execute steps 11 to 14 (Reverse DNS).
+        11.Read host address from client.
+        12.Create an InetAddress object for the recieved host name.
+        13.Get the host address by using getHostName() function.
+        14.Send host name to the client.        
+        15.Close connection
+
+    Client side:
+        1.Initialize the socket,input and output stream
+        2.Construct the client with ip address and port
+        3.Establish a connection
+        4.Take input choice from terminal
+        5.Send input choice to the server
+        6.Read host name or address with respect to the entered choice.
+        7.Send the recieved input to the server via output stream.
+        8.Recieve the processed DNS or Reverse DNS data and display.
+        9.Close connection
+
+Result: Thus, the DNS protocol has been stimulated using UDP sockets in Java Programming.
+
+Experiment No: 4- Ping
+
+Aim:To write a program for stimulating Ping in Java
+
+Procedure:
+    PING stands for Packet InterNet Groper in computer networking field.
+    It’s a computer network administration software used to test the reachability of a host on an Internet Protocol (IP) network.
+    Ping operates by sending Internet Control Message Protocol (ICMP/ICMP6 ) Echo Request packets to the target host and waiting for an ICMP Echo Reply.
+    This Java Program pings an IP address in Java using InetAddress class.
+    It is successful in case of Local Host but for other hosts this program shows that the host is unreachable.
+
+Result:
+    Thus, a program to stimulate ping in Java has been successfully compiled and executed.
+
+Experiment No: 6 ARP
+
+Aim: To study about the ARP using live networking
+
+Procedure:
+
+Most of the computer programs/applications use logical address (IP address) to send/receive messages, however the actual communication happens over the physical address (MAC address) i.e from layer 2 of OSI model.
+So the ARP(Address Resolution Protocol) gets the destination MAC address which helps in communicating with other devices.
+
+The important terms associated with ARP are :
+ARP Cache: After resolving MAC address, the ARP sends it to the source where it stores in a table for future reference. The subsequent communications can use the MAC address from the table
+ARP Cache Timeout: It indicates the time for which the MAC address in the ARP cache can reside
+ARP request: This is nothing but broadcasting a packet over the network to validate whether we came across destination MAC address or not
+ARP response: It is the MAC address response that the source receives from the destination which aids in further communication of the data
+
+Before sending the IP packet, the MAC address of destination must be known.
+If not so, then sender broadcasts the ARP-discovery packet requesting the MAC address of intended destination.
+Since ARP-discovery is broadcast, every host inside that network will get this message but the packet will be discarded by everyone except that intended receiver host whose IP is associated.
+Now, this receiver will send a unicast packet with its MAC address (ARP-reply) to the sender of ARP-discovery packet.
+After the original sender receives the ARP-reply, it updates ARP-cache and start sending unicast message to the destination.
+
+Experiment No: 7- 
+
+Aim: To devise IP address plan for a mid-size Org network using ideas of subnetting and VLSM.
+
+Procedure:
+
+Process of Creating an Addressing Plan
+    1. Define Addressing Standards
+    2. Plan Range
+    3. Allocate IP Space
+    4. Document Plan
+
+Within each subnet range, the plan should account for:
+•	 Subnet sizes
+•	 Subnet assignment
+•	 Static address assignments for network devices
+•	 Dynamic address assignments
+
+Procedure 1 Define Addressing Standards :
+    Step 1: Create standards for IP address assignments within each subnet
+            range. Some standards you may consider applying include
+            Routers, gateways and hot standby router protocol (HSRP) virtual,DHCP(dynamic host control protocol)
+    Step 2: Define a consistent, structured naming convention and DNS for
+            devices.
+    Step 3: Identify DHCP ranges and add them to DNS, including the location
+            of the users. This range may be a portion of the IP address or a physical
+            location. Alternatively, the precise subnet or variation thereof can be used for
+            identification. 
+    Step 4: Document all standards that you develop and reference them on all
+            network engineering plan documents to help ensure consistent deployment.
+
+Procedure 2 Plan Range
+    Step 1: Determine which address space to use by evaluating all of the user
+            and server requirements. Consider the following examples:
+            •	The 192.168.0.0 range is used by many companies and network equipment
+                vendors. This address range has a lower number of host addresses
+                available, which may become an issue as an organization grows or when
+                a merger occurs with another company using the same range.
+            •	If you have the luxury of starting from scratch, consider the 10.0.0.0
+                range to allow for the most flexibility. The 10.0.0.0 range allows for many
+                more hosts in the same range, which provides more flexibility when subnetting.
+                For example: Each branch or building needs to have a consistent
+                host range and the 10.0.0.0 network provides this flexibility.
+            •	In many cases, organizations may have multiple different address RFC
+                1918 spaces in their network. To simplify configuration and troubleshooting,
+                it is easier to work with one range from RFC 1918 space and use
+                summarization. Using multiple IP ranges from different address spaces is
+                not a problem if the addressing plan is well documented.
+            •	Whatever address space is selected or inherited, there may be an advantage
+                to start somewhere other than the beginning of the range when
+                choosing network numbering. In case of a merger with another company
+                that is using IP addressing from 10.0.0.0 or 192.168.0.0, it is advisable not
+                to start at the beginning of the range, to decrease the chance of address
+                conflicts.
+    
+Procedure 3 Allocate IP Space
+    Step 1: Carefully define the size of the IP space with public addresses as it
+            is available only in a finite amount. Be sure to take into account that:
+            •	Private addresses are not constrained
+            •	For ease of use, a /24 mask should be used as a minimum for user
+                subnets.
+            •	End devices always grow in number, so there is no reason to set a low
+                limit on the number of private addresses, since they are readily available.
+            •	WAN connections have much smaller requirements for IP addresses. In
+                general, a point-to-point network connection between two sites has two
+                IP addresses in use. If HSRP is used with redundant routes on each side,
+                the number of addresses increases to six, three for each side of the link.
+            –	/30 subnet allows for two usable IP addresses
+            –	/29 subnet allows for six usable IP addresses
+    Step 2: Reserve a subnet for physical security. These requirements can
+            be as simple as a subnet to control door access to a building or something
+            more complex like video surveillance for the entire building. Even if physical
+            security is not required at the initial setup, you should still complete this
+            step.
+    Step 3: Reserve a subnet for facilities. This subnet addresses physical plant
+            requirements such as remote power control, air conditioning, and facilities
+            monitoring, which can now be monitored with new technology on the IP
+            network.
+    Step 4: Allocate public addresses for all production networks in the demilitarized
+            zone (DMZ), which is the network or networks situated between an
+            ISP edge router and corporate firewalls. An alternative is to use NAT.
+    Step 5: Allocate a subnet for Remote Access, which is generally set up as a
+            virtual private network (VPN).
+    Step 6: Allocate a subnet for Network Management to provide access to network
+            devices such as Ethernet switches, firewalls, routers, etc. This subnet
+            will allow for easy management with a separate logical network. Cisco SBA
+            uses VLAN 1 for management of network devices
+    Step 7: Create a loopback address to make it easier to manage a single
+            address for a router with multiple interfaces.
+            Loopbacks:
+            •	Are always up.
+            •	Are reachable even if a single interface goes down when the router has
+                multiple interfaces.
+            •	Can provide a single source address for voice applications, network
+                management, routing, etc.
+            •	Give continuity. Loopbacks prevent discontinuities as they
+                stay up as long as the router stays up and is reachable over an interface.
+            •	Need to be advertised by the IP routing protocol.
+                Loopback interfaces can be assigned an address of /24 or up to a single /32
+                (be sure to summarize if using /32 loopbacks). Configure loopback interfaces
+                as the source IP address for traps, Secure Shell (SSH), and Simple
+                Network Management Protocol (SNMP).
+
+Procedure 4 Document Plan :
+    Step 1: Document the entire IP address space in a spreadsheet showing
+            site-allocation, usage, and available subnets for each subnet size within
+            the block, along with summary addresses for each particular block of
+            addresses.
+
+Experiment No: 8-Functionalities of routers and switches
+
+Aim: To study functionalities of routers and types of switches
+
+Procedure:
+A switch is a device that is used at the Access or OSI Layer 2; a switch can be used to connect multiple hosts (PCs) to the network.
+Functionalities pf Router:
+1.Forwards Frames with MAC address
+    When a message is sent between hosts on a network or the same switch, the switch checks its MAC address table for the destination address.
+    A switch MAC address table contains a list of all active ports, host or PCs MAC addresses that are attached to it.
+    If the destination MAC address is not found in the table, the switch will not have the necessary information to forward the message and it broadcasts the message ad correct host processes the message and responds to it.
+2.How Switches Learn MAC addresses
+    A switch builds its MAC address table by examining the source MAC address of each frame that is sent between hosts. When a new host sends a message or responds to a flooded message, the switch immediately learns its MAC address and the port to which it is connected.
+    The table is dynamically updated each time a new source MAC address is read by the switch.
+    In this way, a switch quickly learns the MAC addresses of all attached hosts.
+3.Collision Prevention
+    A switch prevents collisions by providing a circuit between the source and destination ports.
+    This circuit provides a dedicated channel over which the hosts connected to the various ports on the switch can communicate.
+    Each port is allocated with a separate bandwidth; these separate circuits allow many conversations to take place at the same time, without collisions occurring.
+Types of Switches:
+1.Fixed configuration switches
+    These types of switches are fixed in their configuration.
+    What that means is that you cannot add features or options to the switch beyond those that originally came with the switch.
+    The particular model you purchase determines the features and options available.
+2.Modular switches
+    These types of switches offer more flexibility in their configuration.
+    Modular switches typically come with different sized chassis that allow for the installation of different numbers of modular line cards the line cards actually contain the ports.
+    The line card fits into the switch chassis like expansion cards fit into a PC
+3.Stackable Switches
+    Stackable switches can be interconnected using a special back cable that provides high-bandwidth between the switches.
+    The stacked switches effectively operate as a single larger switch.
+    Stackable switches are desirable where fault tolerance and bandwidth availability are critical and a modular switch is too costly to implement.
+    Using cross-connected connections, the network can recover quickly if a single switch fails.
+    Stackable switches use a special port for interconnections and do not use line ports for inter-switch connections.
+    The speeds are also typically faster than using line ports for connection switches.
+
+Experiment No: 9 NAT
+
+Aim: To perform a study on Network Address Translation
+
+Procedure:
+To access Internet,one public IP address is needed but as you use private IP address in our private network, translation of private IP address to a public IP address is required.
+Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
+NAT generally operates on router or firewall.
+
+Generally, the border router is configured for NAT i.e the router which have one interface in local (inside) network and one interface in global (outside) network.
+When a packet traverse outside the local (inside) network, then NAT converts that local (private) IP address to a global (public) IP address. When a packet enters the local network, the global (public) IP address is converted to local (private) IP address.
+If NAT run out of addresses, i.e., no address is left in the pool configured then the packets will be dropped and an Internet Control Message Protocol (ICMP) host unreachable packet to the destination is send.
+
+Inside refers to the addresses which must be translated.
+Outside refers to the addresses which are not in control of an organisation.
+These are the network Addresses in which the translation of the addresses will be done.
+
+There are 3 ways to configure NAT:
+a) Static NAT
+b) Dynamic NAT
+c) Post Address Translation
+
+Experiment No:10-(a)Distance Vector Routing
+
+Aim: To perform distance vector routing for all nodes in a network denoted by a graph.
+
+Procedure:
+    It is implemented using Bellman Ford algorithm.
+    Algorithm from Text Book
+
+Result: Thus,distance vector routing has been successfully computed for all the nodes.
+
+Experiment No:10-(b)Link State Routing
+
+Aim: To perform link state routing for all nodes in a network denoted by a graph.
+
+Procedure:
+    It is implemented using Djikstra algorithm.
+    Algorithm from Text Book
+
+Result: Thus,link state routing has been successfully computed for all the nodes.
+
+Experiment No-11 TCP/UDP
+
+Aim: To study and analyse the performance of TCP and UDP
+// Write it as a tabular column.
+Procedure:
+
+TRANSMISSION CONTROL PROTOCOL (TCP)
+1.TCP is a connection-oriented protocol. Connection-orientation means that the communicating devices should establish a connection before transmitting data and should close the connection after transmitting the data.
+2.TCP is reliable as it guarantees delivery of data to the destination router.
+3.TCP provides extensive error checking mechanisms. It is because it provides flow control and acknowledgment of data.
+4.Sequencing of data is a feature of Transmission Control Protocol (TCP). this means that packets arrive in-order at the receiver.
+5.TCP is comparatively slower than UDP.
+6.Retransmission of lost packets is possible in TCP, but not in UDP.
+7.TCP header size is 20 bytes.
+8.TCP is heavy-weight.
+9.TCP is used by HTTP, HTTPs, FTP, SMTP and Telnet
+
+USER DATAGRAM PROTOCOL (UDP)
+1.UDP is the Datagram oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is efficient for broadcast and multicast type of network transmission.
+2.The delivery of data to the destination cannot be guaranteed in UDP.
+3.UDP has only the basic error checking mechanism using checksums.
+4.There is no sequencing of data in UDP. If ordering is required, it has to be managed by the application layer.
+5.UDP is faster, simpler and more efficient than TCP.
+6.There is no retransmission of lost packets in User Datagram Protocol (UDP).
+7.UDP Header size is 8 bytes.
+8.UDP is lightweight.
+9.UDP is used by DNS, DHCP, TFTP, SNMP, RIP, and VoIP
+
+Experiment No: 12 - Routing Protocols
+
+Aim:To study the performance evaluation of Routing protocols
+
+Procedure:
+
+Routing Protocols
+Open shortest path first (OSPF) routing protocol –
+Open Shortest Path First (OSPF) is a unicast routing protocol developed by working group of the Internet Engineering Task Force (IETF).
+It is a intradomain routing protocol.
+It is an open source protocol.
+It is similar to Routing Information Protocol (RIP)
+OSPF is a classless routing protocol, which means that in its updates, it includes the subnet of each route it knows about, thus, enabling variable-length subnet masks. With variable-length subnet masks, an IP network can be broken into many subnets of various sizes. This provides network administrators with extra network-configuration flexibility.These updates are multicasts at specific addresses (224.0.0.5 and 224.0.0.6).
+OSPF is implemented as a program in the network layer using the services provided by the Internet Protocol
+IP datagram that carries the messages from OSPF sets the value of protocol field to 89
+OSPF is based on the SPF algorithm, which sometimes is referred to as the Dijkstra algorithm
+OSPF has two versions – version 1 and version 2. Version 2 is used mostly
+OSPF Messages – OSPF is a very complex protocol. It uses five different types of messages. These are as follows:
+Hello message (Type 1) – It is used by the routers to introduce itself to the other routers.
+Database description message (Type 2) – It is normally send in response to the Hello message.
+Link-state request message (Type 3) – It is used by the routers that need information about specific Link-State packet.
+Link-state update message (Type 4) – It is the main OSPF message for building Link-State Database.
+Link-state acknowledgement message (Type 5) – It is used to create reliability in the OSPF protocol.
+
+
+Routing Information Protocol (RIP) is a dynamic routing protocol which uses hop count as a routing metric to find the best path between the source and the destination network. It is a distance vector routing protocol which has AD value 120 and works on the application layer of OSI model. RIP uses port number 520.
+
+Features of RIP :
+1. Updates of the network are exchanged periodically.
+2. Updates (routing information) are always broadcast.
+3. Full routing tables are sent in updates.
+4. Routers always trust on routing information received from neighbor routers. This is also known as Routing on rumours.
+
+RIP versions : 
+There are three vesions of routing information protocol – RIP Version1, RIP Version2 and RIPng
+
+RIP V1
+1.Sends update as broadcast
+2.Broadcast at 255.255.255.255
+3.Doesn’t support authentication of update messages
+4.Classful routing protocol
+
+RIP V2
+1.Sends update as multicast
+2.Multicast at 224.0.0.9
+3.Supports authentication of RIPv2 update messages
+4.Classless protocol, supports classful
+
+RIPNG
+1.Sends update as multicast
+2.Multicast at FF02::9 (RIPng can only run on IPv6 networks)
+3.–
+4.Classless updates are sent
+
+RIP timers :
+Update timer : The default timing for routing information being exchanged by the routers operating RIP is 30 seconds. Using Update timer, the routers exchange their routing table periodically.
+Invalid timer: If no update comes until 180 seconds, then the destination router consider it as invalid. In this scenario, the destination router mark hop count as 16 for that router.
+Hold down timer : This is the time for which the router waits for neighbour router to respond. If the router isn’t able to respond within a given time then it is declared dead. It is 180 seconds by default.
+Flush time : It is the time after which the entry of the route will be flushed if it doesn’t respond within the flush time. It is 60 seconds by default. This timer starts after the route has been declared invalid and after 60 seconds i.e time will be 180 + 60 = 240 seconds.
+
+Experiment No: 13-(a)Checksum
+
+Aim : To calculate the checksum in client side and verify whether the checksum calculated is correct ot not in the server side.
+
+Procedure:
+
+    Server side
+        1.Initialize the socket and input stream
+        2.Construct the server with the port number 
+        3.Start Server and wait for a client
+        4.Take input from client socket
+        5.Sum the values recieved as input and take the complement of the value 
+        6.If the complement becomes 0 then the data transfer is proper else it has errors in it
+        7.Close the connection
+
+    Client Side
+        1.Initialize the socket,input and output stream
+        2.Construct the client with ip address and port
+        3.Establish a connection
+        4.Take input from terminal
+        5.Sum the values and take the complement of the value and append it as checksum to the data
+        6.Send the data through output stream
+        7.Close connection
+
+Result:
+    Thus,checksum validation has been successfully executed.
+
+Experiment No: 13- (b)CRC
+
+Aim : To calculate the CRC in client side and verify whether the CRC calculated is correct ot not in the server side.
+
+Procedure:
+
+    Server side
+        1.Initialize the socket and input stream
+        2.Construct the server with the port number 
+        3.Start Server and wait for a client
+        4.Take input from client socket
+        5.Perform the division and find the remainder
+        6.If remainder is 0 then data is transmitted correctly else there is some distortion of data
+        7.Close the connection
+
+    Client Side
+        1.Initialize the socket,input and output stream
+        2.Construct the client with ip address and port
+        3.Establish a connection
+        4.Take input from terminal
+        5.Calculate the CRC value for the given dividend and divisor.
+        6.Send the modified dividend and the divisor to the Server using the outstream
+        7.Close connection
+
+Result:
+    Thus,Cyclic Redundency Check validation has been successfully executed.
